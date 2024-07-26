@@ -3,49 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body  class="mt-20 container flex justify-center items-center bg-stone-800 ">
-    <div class=" flex flex-col ">
-            <p class="text-violet-300 text-center mt-5">Calculator Using jquery</p>
+    <div class=" flex flex-col mx-">
+            <p class="text-violet-300 text-center mt-5 text-xl font-bold">Calculator Using jquery</p>
 
             <div class=" flex flex-row  text-violet-500">
-                <p class="input my-6 py-3 px-3 text-2xl font-bold  bg-violet-200 w-full text-end rounded-2xl"></p>
+                <p class="input my-6 py-3 px-3 text-2xl font-bold  bg-violet-200 w-full text-end rounded-2xl">0</p>
             </div>
                 
                     <div class="calc-row-1 flex flex-row">
-                        <div id="clearEntry" class="ScreenO C bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">C</div> 
-                        <div id="clear" class="ScreenO CE bg-violet-400 text-violet-200 outline outline-transparent px-8 py-2 mx-3 my-3 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent  text-center">CE</div>
+                        <div id="clearEntry" class="ScreenO C bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">C</div> 
+                        <div id="clear" class="ScreenO CE bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent  text-center">CE</div>
                         <div id="back" class="ScreenO BACK bg-violet-400 text-violet-200 outline outline-transparent px-6 py-2 mx-3 my-3 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent fixed-width text-center">back</div>
-                        <div class=" operation PLUS bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent ">+</div>
+                        <div class=" operation PLUS bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">+</div>
                     </div>
 
 
                     <div class="calc-row-2 flex flex-row w-full">
-                        <div class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">7</div>
-                        <div class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">8</div>
-                        <div class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">9</div>
-                        <div class=" operation MINUS bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">-</div>
+                        <div class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">7</div>
+                        <div class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">8</div>
+                        <div class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">9</div>
+                        
+                        <div class=" operation MINUS bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">-</div>
                     </div>
 
                     <div class="calc-row-3 flex flex-row w-full">
-                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">6</div>
-                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">5</div>
-                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">4</div>
-                        <div class=" operation DIVIDE bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">/</div>
+                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">6</div>
+                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">5</div>
+                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">4</div>
+                        <div class=" operation DIVIDE bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">/</div>
                     </div>
 
                     <div class="calc-row-4 flex flex-row w-full">
-                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">3</div>
-                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">2</div>
-                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">1</div>
-                        <div class="operation MULTIPLY bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">*</div>
+                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">3</div>
+                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">2</div>
+                        <div class="button bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">1</div>
+                        <div class="operation MULTIPLY bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">*</div>
+                    </div>
+
+                    <div class="calc-row-4 flex flex-row w-full">
+                        <div
+                            class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">
+                            0</div>
+                        <div
+                            class="button  bg-violet-400 text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">
+                            00</div>
+
                     </div>
 
                     
 
-                    <div class="CALCULATE bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-7 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">=</div>
+                    <div class="CALCULATE bg-violet-400 text-center font-bold text-xl text-violet-200 outline outline-transparent md:px-9 md:py-2 md:mx-3 md:my-3 px-6 py-2 mx-2 my-2 rounded-2xl hover:outline-violet-400 hover:text-violet-400 hover:bg-transparent">=</div>
                 
 
     </div>
