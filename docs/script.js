@@ -3,6 +3,7 @@ $(document).ready(function () {
     var prevEntry =0;
     var operation = '';
     var currentEntry = '0' ;
+    var isDecimal = false;
     // var cuurentOperation = ''; 
     // updateScreen(result);
 
@@ -11,11 +12,18 @@ $(document).ready(function () {
          console.log(buttonPressed);
          
          // Add the new button value to the current text
-        if (currentEntry === '0') {
-            currentEntry = buttonPressed;
+        
+            // If a decimal point is pressed
+            if(buttonPressed === '.') {
+            if(!isDecimal) {
+                currentEntry += '.';
+                isDecimal = true;
+            }
         } else {
-            currentEntry += buttonPressed;
+            // Append the button pressed to the current entry
+            currentEntry = (currentEntry === '0') ? buttonPressed : currentEntry + buttonPressed;
         }
+        
         //to add the new buttonValue to the current text
          $(".input").text(currentEntry);
           
@@ -26,6 +34,7 @@ $(document).ready(function () {
         if(currentEntry !=='0'){
             prevEntry = currentEntry;
             currentEntry = '0';
+            isDecimal = false; // Reset decimal flag for new number
             operation = $(this).html();//will store the curent operation value
             $(".input").text('0')
         }
@@ -42,17 +51,20 @@ $(document).ready(function () {
             result = parseFloat(prevEntry) + parseFloat(currentEntry);
         } else if(operation === "-") {
             result = parseFloat(prevEntry) - parseFloat(currentEntry);
-        } else if(operation === "*") {
+        } else if(operation === "x") {
             result = parseFloat(prevEntry) * parseFloat(currentEntry);
         } else if(operation === "/") {
             result = parseFloat(prevEntry) / parseFloat(currentEntry);
+        } else if(operation === "%") {
+            result = (parseFloat(currentEntry) / 100).toString();
         }
 
         // Display result in the input element and reset variables
-        $(".input").text(result);
-        prevEntry = '';
+        $(".input").text(result.toFixed(2));//Format result to 2 decimal places
+        prevEntry = '0';
         currentEntry = result.toString();
         operation = '';
+        isDecimal = false; // Reset decimal flag after calculation
     }
 });
 
@@ -60,14 +72,16 @@ $(document).ready(function () {
     $("#clear").on('click', function () {
         result = 0;
         currentEntry = '0';
-        prevEntry = '';
+        prevEntry = '0';
         operation = '';
+        isDecimal = false; // Reset decimal flag
         $(".input").text('0');
     });
 
     // Event listener for the clear entry button
     $("#clearEntry").on('click', function () {
         currentEntry = '0';
+        isDecimal = false; // Reset decimal flag
         $(".input").text('0');
     });
 
