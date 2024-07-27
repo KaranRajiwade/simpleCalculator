@@ -56,7 +56,7 @@ $(document).ready(function () {
         } else if(operation === "/") {
             result = parseFloat(prevEntry) / parseFloat(currentEntry);
         } else if(operation === "%") {
-            result = (parseFloat(currentEntry) / 100).toString();
+            result = parseFloat(currentEntry) / 100;
         }
 
         // Display result in the input element and reset variables
